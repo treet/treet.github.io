@@ -1,50 +1,14 @@
 <html>
   <body>
-    <video id="video" autoplay></video>
+    <video
+      src="https://videoassets.cmbsports.dev/471f1ac0addc48c2a8c8ff88270bc0a1/m"
+      autoplay="true"
+    />
   </body>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
-    var video = document.getElementById("video");
-    var videoSrc =
-      "https://videoassets.cmbsports.dev/471f1ac0addc48c2a8c8ff88270bc0a1/m";
+    var video = document.querySelector("video");
 
-    var isPlaying = false;
-    const hls = new Hls();
-    hls.attachMedia(video);
-    hls.loadSource(videoSrc);
-
-    hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-      console.log("media attached");
-    });
-
-    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      console.log("manifest parsed");
-    });
-
-    hls.on(Hls.Events.ERROR, (a, b) => {
-      console.error("error", a, b);
-    });
-
-    video.addEventListener("play", () => {
-      isPlaying = true;
-    });
-
-    video.addEventListener("pause", () => {
-      isPlaying = false;
-    });
-
-    video.addEventListener(
-      "click",
-      () => {
-        if (isPlaying) {
-          video.pause();
-        } else {
-          video.play();
-        }
-      },
-      {
-        capture: true,
-      }
-    );
+    video.play();
   </script>
 </html>
