@@ -1,14 +1,19 @@
 <html>
   <body>
     <video
-      src="https://videoassets.cmbsports.dev/471f1ac0addc48c2a8c8ff88270bc0a1/m"
+      src="https://videoassets.cmbsports.dev/571dc7986ed44e8790f87779df53e10a/m"
       autoplay="true"
     />
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     var video = document.querySelector("video");
 
-    video.play();
+    function muteTrick() {
+      video.muted = true;
+
+      video.play().then(() => {
+        video.muted = false;
+      });
+    }
   </script>
 </html>
